@@ -8,18 +8,22 @@
   <body>
     <h1>Adyen Payments</h1>
     <p>Open console. Payments are stored in a window object (adyenPayments).</p>
-    <p>Sample code</p>
+    <p>Sample code in ./src/index.js</p>
     <p>
       <code>
-        let selectedPayment = adyenPayments[0];
+        import {loadPayments} from './payments';
         <br />
-        console.log(selectedPayment.schema);
+        let payments = loadPayments({}};
+        <br />
+        let selectedPayment = payments[0];
+        <br />
+        console.log('schema', selectedPayment.schema);
         <br />
         selectedPayment.setValue( { 'cardDetails.cvc' : 'ABCD'} );
         <br />
-        console.log(selectedPayment.getValue());
+        console.log('value', selectedPayment.getValue());
         <br />
-        console.log(selectedPayment.schema);
+        console.log('schema', selectedPayment.schema);
       </code>
     </p>
     <script src="main.js"></script>

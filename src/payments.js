@@ -1,6 +1,9 @@
 let options = [];
+let labels = {};
 
-const configure = (p) => {
+const configure = (p, lbl) => {
+    if (lbl) labels = lbl;
+
     p.forEach(o => {
         o.schema = getSchema(o) || {};
         o.getValue = function() {
@@ -16,14 +19,15 @@ const configure = (p) => {
 }
 
 const getSchema = (method) => {
-
     if (method && method.fields ) {
         let data = {};
         method.fields.forEach(field => {
             if (field && field.key) {
                 data[field.key] = { 
+                    label: labels[field.key] || field.key,
                     type: field.type, 
                     value: field.value, 
+                    options: field.items || [],
                     optional: field.optional };
             }     
         });
@@ -78,4 +82,4 @@ const setValue = (option, data) => {
     option.schema = getSchema(option);
 };
 
-export const loadPayments = data => configure(data);
+export const loadPayments = (data, labels) => configure(data, labels);

@@ -1,5 +1,8 @@
 import {loadPayments} from './payments';
 import data from './data.json';
 
-window.adyenPayments = loadPayments(data);
-console.log('Ready...');
+const labels = {
+    "cardDetails.cvc" : "Security Code"
+};
+
+window.adyenPayments = loadPayments(data, labels);
