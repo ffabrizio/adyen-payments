@@ -2,41 +2,80 @@ let options = [];
 
 const configure = (p) => {
     p.forEach(o => {
-        o["paymentData"] = configureOption(o);
+        o.schema = getSchema(o) || {};
+        o.getValue = function() {
+            return getValue(this);
+        };
+        o.setValue = function(data) { 
+            setValue(this, data);
+        };
         options.push(o);
     });
 
     return options;
 }
 
-const configureOption = (p) => {
-    if (p && p.fields ) {
+const getSchema = (method) => {
+
+    if (method && method.fields ) {
         let data = {};
-        p.fields.forEach(item => { 
-            if (item && item.key) 
-                data[item.key] = item.value || configureField(item); 
+        method.fields.forEach(field => {
+            if (field && field.key) {
+                data[field.key] = { 
+                    type: field.type, 
+                    value: field.value, 
+                    optional: field.optional };
+            }     
         });
         return data;
-    }
-};
-
-const configureField = (i) => {
-    if (i && i.details ) {
-        let data = {};
-        i.details.forEach(item => {
-            if (item && item.key) 
-                data[item.key] = item.value || configureField(item);
-        });
-		return data;
 	}
+}
 
-    switch(i.type)
+const getValue = (method) => {
+    if (method && method.fields ) {
+        let data = {};
+        method.fields.forEach(field => {
+            if (field && field.key) {
+                data[field.key] = field.value || getValueRecursive(field);
+            }
+        });
+        return data;
+	}
+}
+
+const getValueRecursive = (o) => {
+    let source = o.details || [];
+    let data = {};
+    let hasData = false;
+
+    source.forEach(item => {
+        if (item && item.key) {
+            data[item.key] = item.value || getValue(item);
+            hasData = true;
+        }        
+    });
+
+    if (hasData) return data;
+
+    switch (o.type)
     {
-        case 'boolean' : return false;
-        case 'number' : return 0;
+        case 'boolean' : return { type: 'boolean', value: false };
+        case 'number' : return { type: 'boolean', value: 0 };
     }
 
     return '';
 };
 
-export const configurePayments = data => configure(data);
+const setValue = (option, data) => {
+    
+    option.fields.forEach(f => {
+        const val = data[f.key];
+        if (val) {
+            f.value = val;
+        }
+    });
+
+    option.schema = getSchema(option);
+};
+
+export const loadPayments = data => configure(data);

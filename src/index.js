@@ -1,4 +1,5 @@
-import {configurePayments} from './payments';
+import {loadPayments} from './payments';
 import data from './data.json';
 
-window.adyenPayments = configurePayments(data);
+window.adyenPayments = loadPayments(data);
+console.log('Ready...');

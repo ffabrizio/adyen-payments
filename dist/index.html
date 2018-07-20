@@ -7,7 +7,21 @@
 
   <body>
     <h1>Adyen Payments</h1>
-    <p>Open console. Payments are stored in a window object adyenPayments).</p>
-    <script src='main.js'></script>
+    <p>Open console. Payments are stored in a window object (adyenPayments).</p>
+    <p>Sample code</p>
+    <p>
+      <code>
+        let selectedPayment = adyenPayments[0];
+        <br />
+        console.log(selectedPayment.schema);
+        <br />
+        selectedPayment.setValue( { 'cardDetails.cvc' : 'ABCD'} );
+        <br />
+        console.log(selectedPayment.getValue());
+        <br />
+        console.log(selectedPayment.schema);
+      </code>
+    </p>
+    <script src="main.js"></script>
   </body>
 </html>
