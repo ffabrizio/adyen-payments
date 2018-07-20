@@ -1,10 +1,8 @@
-let options = [];
-let labels = {};
+let __options = [];
+let __labels = {};
 
-const configure = (p, lbl) => {
-    if (lbl) labels = lbl;
-
-    p.forEach(o => {
+const configure = (options) => {
+    options.forEach(o => {
         o.schema = getSchema(o) || {};
         o.getValue = function() {
             return getValue(this);
@@ -12,10 +10,10 @@ const configure = (p, lbl) => {
         o.setValue = function(data) { 
             setValue(this, data);
         };
-        options.push(o);
+        __options.push(o);
     });
 
-    return options;
+    return __options;
 }
 
 const getSchema = (method) => {
@@ -24,7 +22,7 @@ const getSchema = (method) => {
         method.fields.forEach(field => {
             if (field && field.key) {
                 data[field.key] = { 
-                    label: labels[field.key] || field.key,
+                    label: __labels[field.key] || field.key,
                     type: field.type, 
                     value: field.value, 
                     options: field.items || [],
@@ -74,7 +72,7 @@ const setValue = (option, data) => {
     
     option.fields.forEach(f => {
         const val = data[f.key];
-        if (val) {
+        if (f.type !== 'hidden') {
             f.value = val;
         }
     });
@@ -82,4 +80,7 @@ const setValue = (option, data) => {
     option.schema = getSchema(option);
 };
 
-export const loadPayments = (data, labels) => configure(data, labels);
+export const loadPayments = (options, labels) => {
+    if (labels) __labels = labels;
+    return configure(options);
+}
