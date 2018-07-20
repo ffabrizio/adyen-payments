@@ -1,0 +1,672 @@
+[
+    {
+      "description": "OneClickPay",
+      "name": "MasterCard",
+      "type": "mc",
+      "optionType": "savedCreditOrDebitCard",
+      "fields": [
+        {
+          "name": "MasterCard",
+          "key": "cardDetails.cvc",
+          "type": "cvc"
+        },
+        {
+          "name": "MasterCard",
+          "key": "recurringDetailReference",
+          "value": "8415295796478187"
+        },
+        {
+          "name": "MasterCard",
+          "key": "storedDetails",
+          "value": {
+            "card": {
+              "expiryMonth": "10",
+              "expiryYear": "2020",
+              "holderName": "Checkout Shopper PlaceHolder",
+              "number": "1111"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "description": "Credit Card",
+      "optionType": "creditOrDebitCard",
+      "fields": [
+        {
+          "name": "scheme",
+          "key": "encryptedCardNumber",
+          "type": "cardToken",
+          "optional": false
+        },
+        {
+          "name": "scheme",
+          "key": "encryptedSecurityCode",
+          "type": "cardToken",
+          "optional": false
+        },
+        {
+          "name": "scheme",
+          "key": "encryptedExpiryMonth",
+          "type": "cardToken",
+          "optional": false
+        },
+        {
+          "name": "scheme",
+          "key": "encryptedExpiryYear",
+          "type": "cardToken",
+          "optional": false
+        },
+        {
+          "name": "scheme",
+          "key": "holderName",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "name": "scheme",
+          "key": "storeDetails",
+          "type": "boolean",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "description": "Credit Card",
+      "optionType": "creditOrDebitCard",
+      "fields": [
+        {
+          "name": "scheme",
+          "key": "additionalData.card.encrypted.json",
+          "type": "cardToken",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "description": "SEPA Bank Transfer",
+      "optionType": "localPayments",
+      "fields": []
+    },
+    {
+      "description": "Bancontact card",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "bcmc",
+          "key": "additionalData.card.encrypted.json",
+          "type": "cardToken",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "description": "Bancontact app",
+      "optionType": "localPayments",
+      "fields": []
+    },
+    {
+      "description": "Boleto",
+      "optionType": "localPayments",
+      "fields": []
+    },
+    {
+      "description": "Boleto Bancario via Santander",
+      "optionType": "localPayments",
+      "fields": []
+    },
+    {
+      "description": "Local Polish Payment Methods",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "dotpay",
+          "key": "issuer",
+          "type": "select",
+          "optional": false,
+          "options": [
+            {
+              "id": "92",
+              "name": "Bank Sp�?dzielczy w Brodnicy"
+            },
+            {
+              "id": "11",
+              "name": "Bank transfer / postal"
+            },
+            {
+              "id": "74",
+              "name": "Banki Sp�?dzielcze"
+            },
+            {
+              "id": "90",
+              "name": "BG? BNP Paribas PBL"
+            },
+            {
+              "id": "73",
+              "name": "BLIK"
+            },
+            {
+              "id": "87",
+              "name": "Credit Agricole PBL"
+            },
+            {
+              "id": "83",
+              "name": "EnveloBank"
+            },
+            {
+              "id": "55",
+              "name": "erata - dotpay installment"
+            },
+            {
+              "id": "93",
+              "name": "eSKOK"
+            },
+            {
+              "id": "56",
+              "name": "eurobank p?atno?ci online"
+            },
+            {
+              "id": "76",
+              "name": "Getin Bank PBL"
+            },
+            {
+              "id": "81",
+              "name": "Idea Cloud"
+            },
+            {
+              "id": "7",
+              "name": "ING Corporate customers"
+            },
+            {
+              "id": "35",
+              "name": "Kantor Polski"
+            },
+            {
+              "id": "44",
+              "name": "Millennium - P?atno?ci Internetowe"
+            },
+            {
+              "id": "10",
+              "name": "Millennium Corporate customers"
+            },
+            {
+              "id": "68",
+              "name": "mRaty"
+            },
+            {
+              "id": "1",
+              "name": "mTransfer"
+            },
+            {
+              "id": "91",
+              "name": "Nest Bank"
+            },
+            {
+              "id": "80",
+              "name": "Noble Pay"
+            },
+            {
+              "id": "50",
+              "name": "Pay Way Toyota Bank"
+            },
+            {
+              "id": "45",
+              "name": "Pay with Alior Bank"
+            },
+            {
+              "id": "65",
+              "name": "Paylink Idea Bank"
+            },
+            {
+              "id": "36",
+              "name": "Pekao24Przelew"
+            },
+            {
+              "id": "70",
+              "name": "Pocztowy24"
+            },
+            {
+              "id": "6",
+              "name": "Przelew24"
+            },
+            {
+              "id": "46",
+              "name": "P?ac? z Citi Handlowy"
+            },
+            {
+              "id": "38",
+              "name": "P?ac? z ING"
+            },
+            {
+              "id": "2",
+              "name": "P?ac? z Inteligo"
+            },
+            {
+              "id": "4",
+              "name": "P?ac? z iPKO"
+            },
+            {
+              "id": "72",
+              "name": "P?ac? z Orange"
+            },
+            {
+              "id": "66",
+              "name": "P?ac? z PBS"
+            },
+            {
+              "id": "75",
+              "name": "P?ac? z Plus Bank"
+            },
+            {
+              "id": "51",
+              "name": "P?a? z BO?"
+            },
+            {
+              "id": "48",
+              "name": "R-Przelew"
+            },
+            {
+              "id": "88",
+              "name": "Raiffeisen"
+            },
+            {
+              "id": "52",
+              "name": "SkyCash"
+            },
+            {
+              "id": "58",
+              "name": "Szybkie Platnosci Internetowe z Deutsche Bank PBC"
+            },
+            {
+              "id": "60",
+              "name": "T-Mobile us?ugi bankowe"
+            },
+            {
+              "id": "21",
+              "name": "VIA - Moje Rachunki"
+            },
+            {
+              "id": "84",
+              "name": "Volkswagen Bank direct"
+            },
+            {
+              "id": "31",
+              "name": "Zaplac w Zabce i we Freshmarket"
+            },
+            {
+              "id": "24",
+              "name": "mPay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "GiroPay",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "giropay",
+          "key": "bic",
+          "type": "text",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "description": "iDEAL",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "ideal",
+          "key": "idealIssuer",
+          "type": "select",
+          "optional": false,
+          "options": [
+            {
+              "id": "1121",
+              "name": "Test Issuer"
+            },
+            {
+              "id": "1154",
+              "name": "Test Issuer 5"
+            },
+            {
+              "id": "1153",
+              "name": "Test Issuer 4"
+            },
+            {
+              "id": "1152",
+              "name": "Test Issuer 3"
+            },
+            {
+              "id": "1151",
+              "name": "Test Issuer 2"
+            },
+            {
+              "id": "1162",
+              "name": "Test Issuer Cancelled"
+            },
+            {
+              "id": "1161",
+              "name": "Test Issuer Pending"
+            },
+            {
+              "id": "1160",
+              "name": "Test Issuer Refused"
+            },
+            {
+              "id": "1159",
+              "name": "Test Issuer 10"
+            },
+            {
+              "id": "1158",
+              "name": "Test Issuer 9"
+            },
+            {
+              "id": "1157",
+              "name": "Test Issuer 8"
+            },
+            {
+              "id": "1156",
+              "name": "Test Issuer 7"
+            },
+            {
+              "id": "1155",
+              "name": "Test Issuer 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Pay later with Klarna.",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "klarna",
+          "key": "personalDetails",
+          "type": "fieldSet",
+          "optional": false,
+          "details": [
+            {
+              "key": "firstName",
+              "type": "text"
+            },
+            {
+              "key": "infix",
+              "type": "text",
+              "optional": true
+            },
+            {
+              "key": "lastName",
+              "type": "text"
+            },
+            {
+              "key": "gender",
+              "type": "radio",
+              "items": [
+                {
+                  "id": "M",
+                  "name": "MALE"
+                },
+                {
+                  "id": "F",
+                  "name": "FEMALE"
+                }
+              ]
+            },
+            {
+              "key": "dateOfBirth",
+              "type": "date"
+            },
+            {
+              "key": "telephoneNumber",
+              "type": "tel"
+            },
+            {
+              "key": "socialSecurityNumber",
+              "type": "text",
+              "optional": true
+            },
+            {
+              "key": "shopperEmail",
+              "type": "emailAddress"
+            }
+          ]
+        },
+        {
+          "name": "klarna",
+          "key": "billingAddress",
+          "type": "address",
+          "optional": false,
+          "details": [
+            {
+              "key": "street",
+              "type": "text"
+            },
+            {
+              "key": "houseNumberOrName",
+              "type": "text"
+            },
+            {
+              "key": "city",
+              "type": "text"
+            },
+            {
+              "key": "postalCode",
+              "type": "text"
+            },
+            {
+              "key": "stateOrProvince",
+              "type": "text",
+              "optional": true
+            },
+            {
+              "key": "country",
+              "type": "select",
+              "items": [
+                {
+                  "id": "SE",
+                  "name": "Sweden"
+                },
+                {
+                  "id": "NO",
+                  "name": "Norway"
+                },
+                {
+                  "id": "FI",
+                  "name": "Finland"
+                },
+                {
+                  "id": "DK",
+                  "name": "Denmark"
+                },
+                {
+                  "id": "AT",
+                  "name": "Austria"
+                },
+                {
+                  "id": "DE",
+                  "name": "Germany"
+                },
+                {
+                  "id": "NL",
+                  "name": "Netherlands"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "klarna",
+          "key": "separateDeliveryAddress",
+          "type": "boolean",
+          "value": false,
+          "optional": true
+        },
+        {
+          "name": "klarna",
+          "key": "deliveryAddress",
+          "type": "address",
+          "optional": true,
+          "details": [
+            {
+              "key": "street",
+              "type": "text"
+            },
+            {
+              "key": "houseNumberOrName",
+              "type": "text"
+            },
+            {
+              "key": "city",
+              "type": "text"
+            },
+            {
+              "key": "postalCode",
+              "type": "text"
+            },
+            {
+              "key": "stateOrProvince",
+              "type": "text",
+              "optional": true
+            },
+            {
+              "key": "country",
+              "type": "select",
+              "items": [
+                {
+                  "id": "SE",
+                  "name": "Sweden"
+                },
+                {
+                  "id": "NO",
+                  "name": "Norway"
+                },
+                {
+                  "id": "FI",
+                  "name": "Finland"
+                },
+                {
+                  "id": "DK",
+                  "name": "Denmark"
+                },
+                {
+                  "id": "AT",
+                  "name": "Austria"
+                },
+                {
+                  "id": "DE",
+                  "name": "Germany"
+                },
+                {
+                  "id": "NL",
+                  "name": "Netherlands"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Malaysia E-Banking",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "molpay_ebanking_fpx_MY",
+          "key": "issuer",
+          "type": "select",
+          "optional": false,
+          "options": [
+            {
+              "id": "fpx_bimb",
+              "name": "Bank Islam"
+            },
+            {
+              "id": "fpx_amb",
+              "name": "Am Online"
+            },
+            {
+              "id": "fpx_uob",
+              "name": "UOB Bank"
+            },
+            {
+              "id": "fpx_ocbc",
+              "name": "OCBC Bank"
+            },
+            {
+              "id": "fpx_abb",
+              "name": "Affin Bank"
+            },
+            {
+              "id": "fpx_cimbclicks",
+              "name": "CIMB Clicks"
+            },
+            {
+              "id": "fpx_scb",
+              "name": "Standard Chartered Bank"
+            },
+            {
+              "id": "fpx_pbb",
+              "name": "Public Bank"
+            },
+            {
+              "id": "fpx_hlb",
+              "name": "Hong Leong Connect"
+            },
+            {
+              "id": "fpx_mb2u",
+              "name": "Maybank2u"
+            },
+            {
+              "id": "fpx_rhb",
+              "name": "RHB Now"
+            },
+            {
+              "id": "fpx_abmb",
+              "name": "Alliance Bank"
+            },
+            {
+              "id": "fpx_bkrm",
+              "name": "Bank Rakyat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Multibanco",
+      "optionType": "localPayments",
+      "fields": []
+    },
+    {
+      "description": "SEPA Direct Debit",
+      "optionType": "localPayments",
+      "fields": [
+        {
+          "name": "sepadirectdebit",
+          "key": "sepa.ownerName",
+          "type": "text",
+          "optional": false
+        },
+        {
+          "name": "sepadirectdebit",
+          "key": "sepa.ibanNumber",
+          "type": "text",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "description": "UnionPay",
+      "optionType": "localPayments",
+      "fields": []
+    },
+    {
+      "description": "On Account",
+      "optionType": "onAccount",
+      "fields": []
+    }
+  ]
