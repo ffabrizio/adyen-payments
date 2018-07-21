@@ -7,15 +7,19 @@
 
   <body>
     <h1>Adyen Payments</h1>
-    <p>Open console. Payments are stored in a window object (adyenPayments).</p>
-    <p>Sample code in ./src/index.js</p>
+    <p>Payments are loaded in the window object <code>payments</code>.</p>
+    <p>Sample code in <code>./src/index.js</code></p>
     <p>
       <code>
         //import {loadPayments} from './payments';
         <br />
-        //let payments = loadPayments(data, translations;
+        //let payments = loadPayments(data, translations);
+        <br />
+        console.log(payments);
         <br />
         let selectedPayment = payments[0];
+        <br />
+        console.log('selection', selectedPayment);
         <br />
         console.log('schema', selectedPayment.schema);
         <br />
