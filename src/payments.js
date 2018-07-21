@@ -61,8 +61,8 @@ const getValueRecursive = (o) => {
 
     switch (o.type)
     {
-        case 'boolean' : return { type: 'boolean', value: false };
-        case 'number' : return { type: 'boolean', value: 0 };
+        case 'boolean' : return false;
+        case 'number' : return 0;
     }
 
     return '';
